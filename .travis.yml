@@ -23,7 +23,7 @@ install:
   - sudo dkp-pacman -S devkitARM general-tools dstools ndstool libnds libfat-nds --noconfirm
   - export DEVKITPRO=/opt/devkitpro
   - export DEVKITARM=${DEVKITPRO}/devkitARM
-  - sudo aptitude install libsdl1.2-dev
+  - sudo apt-get install libsdl1.2-dev
 
 script:
   - make
