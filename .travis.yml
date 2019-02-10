@@ -1,7 +1,7 @@
 language: cpp
 
 os: linux
-sudo: true
+sudo: false
 dist: trusty
 
 env:
@@ -16,8 +16,6 @@ cache:
 
 before_install:
   - curl -L https://github.com/devkitPro/pacman/releases/download/devkitpro-pacman-1.0.1/devkitpro-pacman.deb -o pacman.deb
-  - sudo apt-get install libegl1-mesa-dev
-  - sudo apt-get install libgles2-mesa-dev
 
 install:
   - sudo dpkg -i pacman.deb
@@ -25,7 +23,7 @@ install:
   - sudo dkp-pacman -S devkitARM general-tools dstools ndstool libnds libfat-nds --noconfirm
   - export DEVKITPRO=/opt/devkitpro
   - export DEVKITARM=${DEVKITPRO}/devkitARM
-  - sudo apt-get install libsdl2-dev
+  - sudo aptitude install libsdl1.2-dev
 
 script:
   - make
